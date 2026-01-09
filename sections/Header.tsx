@@ -1,3 +1,23 @@
 export const Header = () => {
-  return <div>Header Section</div>;
+  return (
+    <div className="flex justify-center items-center fixed top-3 w-full">
+      <nav className="flex gap-1 p-0.5 border border-black/15 rounded-full bg-black/5 backdrop-blur">
+        <a href="#" className="nav-item">
+          Home
+        </a>
+        <a href="#" className="nav-item">
+          Projects
+        </a>
+        <a href="#" className="nav-item">
+          About
+        </a>
+        <a
+          href="#"
+          className="nav-item bg-black/90 text-white/90 hover:bg-black/70 hover:text-gray-100"
+        >
+          Contact
+        </a>
+      </nav>
+    </div>
+  );
 };
