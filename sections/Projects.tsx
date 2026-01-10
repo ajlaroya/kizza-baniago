@@ -44,3 +44,5 @@ const portfolioProjects = [
 export const ProjectsSection = () => {
   return <div>Projects Section</div>;
 };
+
+// 1:19:38
