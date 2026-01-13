@@ -1,8 +1,8 @@
-import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
-import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import memojiAvatar1 from "@/public/images/memoji-avatar-1.png";
+import memojiAvatar2 from "@/public/images/memoji-avatar-2.png";
+import memojiAvatar3 from "@/public/images/memoji-avatar-3.png";
+import memojiAvatar4 from "@/public/images/memoji-avatar-4.png";
+import memojiAvatar5 from "@/public/images/memoji-avatar-5.png";
 
 const testimonials = [
   {
@@ -40,3 +40,5 @@ const testimonials = [
 export const TestimonialsSection = () => {
   return <div>Testimonials Section</div>;
 };
+
+// 2:15:46
