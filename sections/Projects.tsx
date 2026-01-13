@@ -1,16 +1,22 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import darkSaasLandingPage from "@/public/images/dark-saas-landing-page.png";
+import lightSaasLandingPage from "@/public/images/light-saas-landing-page.png";
+import aiStartupLandingPage from "@/public/images/ai-startup-landing-page.png";
+import CheckCircleIcon from "@/public/icons/check-circle.svg";
+import ArrowUpRightIcon from "@/public/icons/arrow-up-right.svg";
+import grainImage from "@/public/images/grain.jpg";
+import Image from "next/image";
 
 const portfolioProjects = [
   {
     company: "Acme Corp",
     year: "2022",
-    title: "Dark Saas Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+    title: "Dark SaaS — Design System & Landing",
+    role: "Lead Product Designer",
+    tools: ["Figma", "Framer", "Illustrator"],
+    highlights: [
+      { title: "Built a modular design system to ensure visual consistency" },
+      { title: "Designed conversion-focused hero and onboarding flows" },
+      { title: "Delivered high-fidelity prototypes used in user testing" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: darkSaasLandingPage,
@@ -18,11 +24,15 @@ const portfolioProjects = [
   {
     company: "Innovative Co",
     year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+    title: "Light SaaS — Brand & UI Refresh",
+    role: "Brand & UI Designer",
+    tools: ["Sketch", "Figma", "Principle"],
+    highlights: [
+      { title: "Refreshed brand language and visual assets" },
+      {
+        title: "Prototyped micro-interactions to improve perceived performance",
+      },
+      { title: "Iterated on onboarding after usability testing" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
     image: lightSaasLandingPage,
@@ -30,11 +40,13 @@ const portfolioProjects = [
   {
     company: "Quantum Dynamics",
     year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+    title: "AI Startup — Product UI & Prototyping",
+    role: "Lead Product Designer",
+    tools: ["Figma", "Maze", "Framer"],
+    highlights: [
+      { title: "Designed intuitive workflows for complex product tasks" },
+      { title: "Created interactive prototypes for rapid validation" },
+      { title: "Improved task completion by iterating on user feedback" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: aiStartupLandingPage,
@@ -42,7 +54,74 @@ const portfolioProjects = [
 ];
 
 export const ProjectsSection = () => {
-  return <div>Projects Section</div>;
-};
+  return (
+    <section className="pb-16 lg:py-24">
+      <div className="container">
+        <div className="flex justify-center">
+          <p className="uppercase font-semibold tracking-wide bg-linear-to-r from-emerald-500 to-pink-400 text-transparent bg-clip-text text-center">
+            Real-world results
+          </p>
+        </div>
+        <h2 className="text-3xl md:text-5xl text-center mt-6 font-semibold tracking-tight">
+          Featured Designs
+        </h2>
+        <p className="text-center md:text-lg lg:text-xl text-black/60 mt-4 max-w-md mx-auto">
+          Here are some of my recent design projects that showcase my skills and
+          experience.
+        </p>
 
-// 1:19:38
+        <div className="flex flex-col mt-10 md:mt-20 gap-20">
+          {portfolioProjects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-black/5 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-black/10 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none"
+            >
+              <div
+                className="absolute inset-0 -z-10 opacity-5"
+                style={{ backgroundImage: `url(${grainImage.src})` }}
+              />
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+                <div className="lg:pb-16">
+                  <div className="uppercase font-bold tracking-wide bg-linear-to-r from-emerald-500 to-pink-400 text-transparent bg-clip-text inline-flex gap-2 text-sm">
+                    <span>{project.company}</span>
+                    <span>&bull;</span>
+                    <span>{project.year}</span>
+                  </div>
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight mt-2 md:mt-5">
+                    {project.title}
+                  </h3>
+                  <hr className="border-t-2 border-black/10 mt-4 md:mt-5" />
+                  <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+                    {project.highlights.map((highlight, index) => (
+                      <li
+                        key={index}
+                        className="flex gap-2 text-sm md:text-base text-black/60"
+                      >
+                        <CheckCircleIcon className="size-5 md:size-6" />
+                        <span>{highlight.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={project.link}>
+                    <button className="bg-black/90 text-white/90 h-12 w-full md:w-auto md:px-6 rounded-3xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                      <span>View Design</span>
+                      <ArrowUpRightIcon className="size-4 ml-2 inline-block" />
+                    </button>
+                  </a>
+                </div>
+
+                <div className="relative">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    className="mt-8 -mb-4 md:mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
