@@ -16,35 +16,84 @@ export const HeroSection = () => {
         <div className="size-205 hero-ring" />
         <div className="size-255 hero-ring" />
         <div className="size-305 hero-ring" />
-        <HeroOrbit size={800} rotation={-72}>
-          <StarIcon className="size-28 text-pink-300" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}>
-          <StarIcon className="size-12 text-pink-300" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StarIcon className="size-8 text-pink-300" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-14}>
+        <HeroOrbit
+          size={430}
+          rotation={-14}
+          shouldOrbit
+          orbitDuration="30s"
+          shouldSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-8 text-pink-300/40" />
         </HeroOrbit>
-        <HeroOrbit size={440} rotation={79}>
+        <HeroOrbit
+          size={440}
+          rotation={79}
+          shouldOrbit
+          orbitDuration="32s"
+          shouldSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-5 text-pink-300/40" />
         </HeroOrbit>
-        <HeroOrbit size={530} rotation={178}>
+        <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
+          <SparkleIcon className="size-2 rounded-full text-pink-300/40" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={530}
+          rotation={178}
+          shouldOrbit
+          orbitDuration="36s"
+          shouldSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-10 text-pink-300/40" />
         </HeroOrbit>
-        <HeroOrbit size={710} rotation={144}>
+        <HeroOrbit
+          size={550}
+          rotation={20}
+          shouldOrbit
+          orbitDuration="38s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-12 text-pink-300" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={590}
+          rotation={98}
+          shouldOrbit
+          orbitDuration="40s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-8 text-pink-300" />
+        </HeroOrbit>
+        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+          <SparkleIcon className="size-2 rounded-full text-pink-300/40" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={710}
+          rotation={144}
+          shouldOrbit
+          orbitDuration="44s"
+          shouldSpin
+          spinDuration="3s"
+        >
           <SparkleIcon className="size-14 text-pink-300/40" />
         </HeroOrbit>
-        <HeroOrbit size={720} rotation={85}>
+        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
           <SparkleIcon className="size-3 rounded-full text-pink-300/40" />
         </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <SparkleIcon className="size-2 rounded-full text-pink-300/40" />
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <SparkleIcon className="size-2 rounded-full text-pink-300/40" />
+        <HeroOrbit
+          size={800}
+          rotation={-72}
+          shouldOrbit
+          orbitDuration="48s"
+          shouldSpin
+          spinDuration="6s"
+        >
+          <StarIcon className="size-28 text-pink-300" />
         </HeroOrbit>
       </div>
       <div className="container">
@@ -56,7 +105,9 @@ export const HeroSection = () => {
             height={100}
           />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 rounded-full inline-flex text-gray-100 items-center gap-4">
-            <div className="bg-pink-500 size-2.5 rounded-full animate-pulse" />
+            <div className="bg-green-500 size-2.5 rounded-full relative">
+              <div className="absolute inset-0 animate-ping rounded-full bg-green-500" />
+            </div>
             <div className="text-sm font-semibold">
               Available for new projects
             </div>
@@ -64,7 +115,7 @@ export const HeroSection = () => {
         </div>
         <div className="max-w-lg mx-auto">
           <h1 className="text-3xl md:text-5xl text-center mt-8 tracking-tight font-semibold">
-            Designing exceptional user experiences
+            Hello! I'm Kizza, a designer based in the Philippines.
           </h1>
           <p className="mt-4 text-center text-black/80 md:text-lg">
             I help customers create digital products that are both beautiful and
