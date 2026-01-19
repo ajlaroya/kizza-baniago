@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-move-left: move-left 1s linear infinite;
+
+  @keyframes move-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 @layer base {
   .nav-item {
     @apply px-4 py-1.5 rounded-full text-black/80 text-sm font-semibold hover:bg-black/10 hover:text-black/90 transition duration-300;
