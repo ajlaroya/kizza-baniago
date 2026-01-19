@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import TechIcon from "./TechIcon";
+import { Fragment } from "react/jsx-runtime";
 
 const ToolboxItems = ({
   toolboxItems,
@@ -14,23 +15,27 @@ const ToolboxItems = ({
     <div
       className={twMerge(
         "flex mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
-        className
+        className,
       )}
     >
       <div
         className={twMerge(
           "flex flex-none py-0.5 gap-6",
-          itemsWrapperClassName
+          itemsWrapperClassName,
         )}
       >
-        {toolboxItems.map((item) => (
-          <div
-            key={item.name}
-            className="inline-flex items-center gap-4 py-2 px-3 outline-2 outline-black/10 rounded-full"
-          >
-            <TechIcon component={item.iconType} />
-            <span className="font-semibold">{item.name}</span>
-          </div>
+        {[...new Array(2)].fill(0).map((_, index) => (
+          <Fragment key={index}>
+            {toolboxItems.map((item) => (
+              <div
+                key={item.name}
+                className="inline-flex items-center gap-4 py-2 px-3 outline-2 outline-black/10 rounded-full"
+              >
+                <TechIcon component={item.iconType} />
+                <span className="font-semibold">{item.name}</span>
+              </div>
+            ))}
+          </Fragment>
         ))}
       </div>
     </div>
